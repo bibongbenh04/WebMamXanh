@@ -1,0 +1,39 @@
+{% load static %}
+<html>
+<head>
+	<title>quiz app</title>
+	<link rel="stylesheet" href="{% static 'assets/css/quizStyle.css' %}">
+</head>
+<body>
+<div class="app">
+	<h1>BiBongBenh Quiz</h1>
+	<div class="quiz">
+		<h2 id="question">{{questions.0.question_text}}</h2>
+		<div id="answer-buttons">
+			<button class="btn" onclick="selectAnswer(1)"> {{questions.0.choice1}}</button>
+			<button class="btn" onclick="selectAnswer(2)"> {{questions.0.choice2}}</button>
+			<button class="btn" onclick="selectAnswer(3)"> {{questions.0.choice3}}</button>
+			<button class="btn" onclick="selectAnswer(4)"> {{questions.0.choice4}}</button>
+		</div>
+	</div>
+</div>
+	<script src="{% static 'assets/js/quiz.js' %}?v=2"></script>
+	<script>
+		function selectAnswer(answerIndex) {
+		    getNextQuestion();
+		}
+
+		function getNextQuestion() {
+			var ques = "{" + "{" + "questions." + ({{id_ques}}+1) + ".question_text }}";
+			var ques2 = ques;
+		    document.getElementById("question").innerHTML = '${ques}';
+		    document.getElementById("answer-buttons").innerHTML = `
+		        <button class="btn" onclick="selectAnswer(1)"> {{ questions.1.choice1 }}</button>
+		        <button class="btn" onclick="selectAnswer(2)"> {{ questions.1.choice2 }}</button>
+		        <button class="btn" onclick="selectAnswer(3)"> {{ questions.1.choice3 }}</button>
+		        <button class="btn" onclick="selectAnswer(4)"> {{ questions.1.choice4 }}</button>
+		    `;
+		}
+	</script>
+</body>
+</html>
