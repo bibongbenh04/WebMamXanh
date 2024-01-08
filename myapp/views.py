@@ -42,11 +42,14 @@ def login(request):
 			messages.info(request, 'Credentials Invalid')
 			return redirect('login')
 	else:
-		return render(request, 'login.html')
+		return render(request, 'themes/login.html')
 
 def logout(request):
 	auth.logout(request)
 	return redirect('/')
+
+def signup(request):
+	return render(request, 'themes/signup.html')
 
 def register(request):
 	if request.method == 'POST':
@@ -71,9 +74,6 @@ def register(request):
 			return redirect('register')
 	else:
 		return render(request, 'register.html')
-
-def counter(request):
-	return render(request, 'counter.html')
 
 def post(request, pk):
 	return render(request, 'post.html', {'pk': pk})
