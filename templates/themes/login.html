@@ -70,7 +70,8 @@
           </div>
           <div class="layout__body">
             <h2 class="auth__tagline">Hãy đến với Mầm Xanh</h2>
-            <form class="form" action="#">
+            <form class="form" action="login" method="POST">
+              {% csrf_token %}
               <div class="form__group form__group">
                 <label for="room_name">Tên Đăng Nhập</label>
                 <input id="username" name="username" type="text" placeholder="e.g. dennis_ivy" />

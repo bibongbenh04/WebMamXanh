@@ -71,10 +71,15 @@
           <div class="layout__body">
             <h2 class="auth__tagline">Một hạt giống mới của Mầm Xanh</h2>
 
-            <form class="form" action="#">
+            <form class="form" action="singup" method="POST" onsubmit="return validateForm()">
+              {% csrf_token %}
               <div class="form__group form__group">
                 <label for="fullname">Họ Và Tên</label>
                 <input id="fullname" name="fullname" type="text" placeholder="e.g. Lê Hồng Quân" />
+              </div>
+              <div class="form__group form__group">
+                <label for="email">Gmail</label>
+                <input id="email" name="email" type="text" placeholder="e.g. hongquan29102004@gmail.com" />
               </div>
               <div class="form__group form__group">
                 <label for="room_name">Tên Đăng Nhập</label>
@@ -120,8 +125,10 @@
                 Đăng Ký
               </button>
             </form>
-
             <div class="auth__action">
+              {% for message in messages %}
+                  <h5 style="color: red;">{{ message }}</h5>
+              {% endfor %}
               <p>Bạn đã có tài khoản?</p>
               <a href="login" class="btn btn--link">Đăng Nhập</a>
             </div>

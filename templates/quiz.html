@@ -1,39 +1,69 @@
 {% load static %}
 <html>
 <head>
-	<title>quiz app</title>
-	<link rel="stylesheet" href="{% static 'assets/css/quizStyle.css' %}">
+	<title>Quiz App</title>
+	<link rel="stylesheet" href="{% static 'quiz/quizStyle.css' %}">
+	<link rel="stylesheet" href="/static/quiz/quizStyle.css">
 </head>
 <body>
-<div class="app">
-	<h1>BiBongBenh Quiz</h1>
-	<div class="quiz">
-		<h2 id="question">{{questions.0.question_text}}</h2>
-		<div id="answer-buttons">
-			<button class="btn" onclick="selectAnswer(1)"> {{questions.0.choice1}}</button>
-			<button class="btn" onclick="selectAnswer(2)"> {{questions.0.choice2}}</button>
-			<button class="btn" onclick="selectAnswer(3)"> {{questions.0.choice3}}</button>
-			<button class="btn" onclick="selectAnswer(4)"> {{questions.0.choice4}}</button>
+
+	<main class="main">
+		<div class="container">
+			<section class="quiz-section">
+				<div class="quiz-box">
+					<h1>MamXanh Quiz</h1>
+					<div class="quiz-header">
+						<span>Quiz Website </span>
+						<span class="header-score"> Score: 0 / 5</span>
+					</div>
+					<h2 class="question-text">Ai thông minh hơn học sinh lớp 5 ?</h2>
+					<div class="option-list">
+						<div class="option">
+							<span>A.Le Hong Quan</span>
+						</div>
+						<div class="option">
+							<span>B.Le Hong Quan Thu 2</span>
+						</div>
+						<div class="option">
+							<span>C.Bi Bong Benh</span>
+						</div>
+						<div class="option">
+							<span>D.Chinh la toi</span>
+						</div>
+						<div class="quiz-footer">
+							<span class="question-total">1 of 5 Questions</span>
+							<button class="next-btn">Next</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="home">
+				<div class="home-content">
+					<h1>  Mầm xanh <br> Trắc nghiệm</h1>
+					<p>Đây là cuộc thi do ban tổ chức tạo ra nhằm góp phần ...</p>
+					<button class="start-btn">Start Quiz</button>
+				</div>
+			</section>
+		</div>
+	</main>
+	
+	<div class="popup-info">
+		<h2>Quiz Guide</h2>
+		<span class="info">1. Câu hỏi 1 - Miêu tả thông tin của câu hỏi 1</span>
+		<span class="info">2. Câu hỏi 2 - Miêu tả thông tin của câu hỏi 1</span>
+		<span class="info">3. Câu hỏi 3 - Miêu tả thông tin của câu hỏi 1</span>
+		<span class="info">4. Câu hỏi 4 - Miêu tả thông tin của câu hỏi 1</span>
+		<span class="info">5. Câu hỏi 5 - Miêu tả thông tin của câu hỏi 1</span>
+
+		<div class="btn-group">
+			<button class="info-btn exit-btn">Exit Quiz</button>
+			<a href="#" class="info-btn continue-btn">Continue</a>
 		</div>
 	</div>
-</div>
-	<script src="{% static 'assets/js/quiz.js' %}?v=2"></script>
-	<script>
-		function selectAnswer(answerIndex) {
-		    getNextQuestion();
-		}
-
-		function getNextQuestion() {
-			var ques = "{" + "{" + "questions." + ({{id_ques}}+1) + ".question_text }}";
-			var ques2 = ques;
-		    document.getElementById("question").innerHTML = '${ques}';
-		    document.getElementById("answer-buttons").innerHTML = `
-		        <button class="btn" onclick="selectAnswer(1)"> {{ questions.1.choice1 }}</button>
-		        <button class="btn" onclick="selectAnswer(2)"> {{ questions.1.choice2 }}</button>
-		        <button class="btn" onclick="selectAnswer(3)"> {{ questions.1.choice3 }}</button>
-		        <button class="btn" onclick="selectAnswer(4)"> {{ questions.1.choice4 }}</button>
-		    `;
-		}
-	</script>
+	<script src="/static/quiz/script.js"></script>
+	<script src="/static/quiz/question.js"></script>
+	<script src="{% static 'quiz/question.js' %}"></script>
+	<script src="{% static 'quiz/script.js'}"></script>
 </body>
 </html>
