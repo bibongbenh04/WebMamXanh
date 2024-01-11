@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.models import User, auth
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages as django_messages
 from .models import Feature, QuizQuestion, ThreadManager, Thread
 from myapp.models import Thread
+from django.core.serializers import serialize
 
 # Create your views here.
 def index(request):
@@ -20,13 +21,21 @@ def messages(request):
     return render(request, 'messages.html', context)
 
 def quiz(request):
-	
-    context = {
-        'questions': QuizQuestion.objects.all(),
-        'id_ques': 0,
-    }
-
-    return render(request, 'quiz.html', context)
+    questions = QuizQuestion.objects.all()
+    questions_list = [
+        {
+            'question_text': question.question_text,
+            'option1': question.choice1,
+            'option2': question.choice2,
+            'option3': question.choice3,
+            'option4': question.choice4,
+            'correctChoice': question.correct_choice,
+        }
+        for question in questions
+    ]
+    data = {'questions': questions_list}
+    
+    return render(request, 'quiz.html', {'questions_data': data})
 	
 def login(request):
 	if request.method == 'POST':

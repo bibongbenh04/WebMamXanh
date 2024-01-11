@@ -2,23 +2,32 @@
 <html>
 <head>
 	<title>Quiz App</title>
-	<link rel="stylesheet" href="{% static 'quiz/quizStyle.css' %}">
-	<link rel="stylesheet" href="/static/quiz/quizStyle.css">
+	<link rel="stylesheet" href="{% static 'quiz/quizStyle.css' %}?v=2">
+	<script id="questions-data" type="application/json">
+		{{ questions_data|json_script:"questions-data"| safe}}
+	</script>
 </head>
 <body>
 
 	<main class="main">
 		<div class="container">
+			<video autoplay loop muted plays-inline class="background-clip">
+				<source src = "{% static 'quiz/video/Tổng Hợp Những Video Anime Chill Cảm Giác Thoải Mãi #13 (1).mp4' %}" type="video/mp4">
+			</video>
+			<audio controls autoplay loop>
+				<source src="{% static 'quiz/sound/music.mp3' %}" type="audio/mp3">
+			 </audio>
 			<section class="quiz-section">
 				<div class="quiz-box">
-					<h1>MamXanh Quiz</h1>
+					<h1>KIỂM TRA</h1>
 					<div class="quiz-header">
-						<span>Quiz Website </span>
+						<span>Mầm Xanh <br> Website </span>
+						<span class="clock" id = "clock">00:15</span>
 						<span class="header-score"> Score: 0 / 5</span>
 					</div>
 					<h2 class="question-text">Ai thông minh hơn học sinh lớp 5 ?</h2>
 					<div class="option-list">
-						<div class="option">
+						<!-- <div class="option">
 							<span>A.Le Hong Quan</span>
 						</div>
 						<div class="option">
@@ -29,11 +38,12 @@
 						</div>
 						<div class="option">
 							<span>D.Chinh la toi</span>
-						</div>
-						<div class="quiz-footer">
-							<span class="question-total">1 of 5 Questions</span>
-							<button class="next-btn">Next</button>
-						</div>
+						</div> -->
+					</div>
+
+					<div class="quiz-footer">
+						<span class="question-total">1 of 5 Questions</span>
+						<button class="next-btn">Next</button>
 					</div>
 				</div>
 			</section>
@@ -61,9 +71,7 @@
 			<a href="#" class="info-btn continue-btn">Continue</a>
 		</div>
 	</div>
-	<script src="/static/quiz/script.js"></script>
-	<script src="/static/quiz/question.js"></script>
-	<script src="{% static 'quiz/question.js' %}"></script>
-	<script src="{% static 'quiz/script.js'}"></script>
+	<script src="{% static 'quiz/script.js' %}?v=2"></script>
+	<script src="{% static 'quiz/question.js' %}?v=2"></script>
 </body>
 </html>
