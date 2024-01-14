@@ -36,7 +36,7 @@ envname\scripts\activate
 
 --> Install the requirements :
 ```bash
-pip install -r requirements.txt
+pip install -r requirement.txt
 
 ```
 
