@@ -8,6 +8,37 @@
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="{% static 'themes/style.css' %}" />
     <title> Mầm Xanh </title>
+    <!-- ... Your existing head content ... -->
+    <script>
+      function validateForm() {
+          var email = document.getElementById('email').value;
+          var username = document.getElementById('username').value;
+          var password = document.getElementById('password').value;
+          var confirmPassword = document.getElementById('confirm_password').value;
+
+          if (email === '') {
+            document.getElementById('email').focus();
+            return false;
+          }
+
+          if (username === '') {        
+            document.getElementById('username').focus();
+            return false;
+          }
+
+          if (password === '') {
+            document.getElementById('password').focus();
+            return false;
+            
+          }
+
+          if (confirmPassword === '') {
+            document.getElementById('confirm_password').focus();
+            return false;
+          }
+          return true;
+      }
+  </script>
   </head>
   <body>
     <header class="header header--loggedIn">
@@ -71,12 +102,12 @@
           <div class="layout__body">
             <h2 class="auth__tagline">Một hạt giống mới của Mầm Xanh</h2>
 
-            <form class="form" action="singup" method="POST" onsubmit="return validateForm()">
+            <form class="form" action="signup" method="POST" onsubmit="return validateForm()">
               {% csrf_token %}
-              <div class="form__group form__group">
+              {% comment %} <div class="form__group form__group">
                 <label for="fullname">Họ Và Tên</label>
                 <input id="fullname" name="fullname" type="text" placeholder="e.g. Lê Hồng Quân" />
-              </div>
+              </div> {% endcomment %}
               <div class="form__group form__group">
                 <label for="email">Gmail</label>
                 <input id="email" name="email" type="text" placeholder="e.g. hongquan29102004@gmail.com" />
