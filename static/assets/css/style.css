@@ -118,19 +118,19 @@ h6 {
 --------------------------------------------------------------*/
 #header {
   transition: all 0.5s;
-  background: #fff;
+  background: #1D6F5A;
   z-index: 997;
-  padding: 15px 0;
-  border-bottom: 1px solid #e6f2fb;
+  padding: 2px 0;
+  border-bottom: 1px solid #040404;
 }
 
 #header.header-scrolled {
-  border-color: #fff;
+  border-color: #04f15b;
   box-shadow: 0px 2px 15px rgba(18, 66, 101, 0.08);
 }
 
 #header .logo {
-  font-size: 28px;
+  font-size: 30px;
   margin: 0;
   padding: 0;
   line-height: 1;
@@ -139,19 +139,19 @@ h6 {
   font-family: "Poppins", sans-serif;
 }
 
-#header .logo a {
-  color: #16507b;
-}
+/* #header .logo a {
+  color: #ffffff;
+} */
 
 #header .logo img {
-  max-height: 40px;
+  max-height: 80px;
 }
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
   #header .logo {
-    font-size: 28px;
+    font-size: 58px;
   }
-}
+} */
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -182,7 +182,7 @@ h6 {
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-size: 14px;
-  color: #16507b;
+  color: #ffffff;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -198,7 +198,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #2487ce;
+  color: red;
 }
 
 .navbar .getstarted,
@@ -396,14 +396,14 @@ h6 {
   width: 100%;
   height: 100vh;
   position: relative;
-  background: url("../img/hero-bg.jpg") top center;
+  /* background: url("../img/hero-bg.jpg") top center; */
   background-size: cover;
   position: relative;
 }
 
 #hero:before {
   content: "";
-  background: rgba(255, 255, 255, 0.8);
+  background: #ECF6E1;
   position: absolute;
   bottom: 0;
   top: 0;
@@ -561,6 +561,9 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+.about {
+  background: #ECF6E1;
+}
 .about .content h3 {
   font-weight: 600;
   font-size: 26px;
@@ -620,6 +623,7 @@ section {
 --------------------------------------------------------------*/
 .counts {
   padding: 60px 0;
+  background: #ECF6E1;
 }
 
 .counts .count-box {
@@ -648,6 +652,10 @@ section {
 /*--------------------------------------------------------------
 # About Video
 --------------------------------------------------------------*/
+.about-video {
+  background: #ECF6E1;
+}
+
 .about-video .content {
   font-size: 15px;
 }
@@ -766,6 +774,7 @@ section {
 .clients {
   padding: 15px 0;
   text-align: center;
+  background: #ECF6E1;
 }
 
 .clients img {
@@ -788,99 +797,12 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Testimonials
---------------------------------------------------------------*/
-.testimonials .testimonials-carousel,
-.testimonials .testimonials-slider {
-  overflow: hidden;
-}
-
-.testimonials .testimonial-item {
-  box-sizing: content-box;
-  text-align: center;
-  min-height: 320px;
-}
-
-.testimonials .testimonial-item .testimonial-img {
-  width: 90px;
-  border-radius: 50%;
-  margin: 0 auto;
-}
-
-.testimonials .testimonial-item h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px 0 5px 0;
-  color: #111;
-}
-
-.testimonials .testimonial-item h4 {
-  font-size: 14px;
-  color: #999;
-  margin: 0;
-}
-
-.testimonials .testimonial-item .quote-icon-left,
-.testimonials .testimonial-item .quote-icon-right {
-  color: #c9e3f5;
-  font-size: 26px;
-}
-
-.testimonials .testimonial-item .quote-icon-left {
-  display: inline-block;
-  left: -5px;
-  position: relative;
-}
-
-.testimonials .testimonial-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
-}
-
-.testimonials .testimonial-item p {
-  font-style: italic;
-  margin: 0 15px 15px 15px;
-  padding: 20px;
-  background: #f3f9fd;
-  position: relative;
-  margin-bottom: 35px;
-  border-radius: 6px;
-}
-
-.testimonials .testimonial-item p::after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-top: 20px solid #f3f9fd;
-  border-right: 20px solid transparent;
-  border-left: 20px solid transparent;
-  position: absolute;
-  bottom: -20px;
-  left: calc(50% - 20px);
-}
-
-.testimonials .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
-  opacity: 1;
-  border: 1px solid #2487ce;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #2487ce;
-}
-
-/*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+.services {
+  background: #ECF6E1;
+}
+
 .services .icon-box {
   text-align: center;
   padding: 70px 20px 80px 20px;
@@ -1052,6 +974,10 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+.portfolio {
+  background: #ECF6E1;
+}
+
 .portfolio .portfolio-item {
   margin-bottom: 30px;
 }
@@ -1203,75 +1129,13 @@ section {
   bottom: 15px;
   right: 15px;
 }
-
-/*--------------------------------------------------------------
-# Portfolio Details
---------------------------------------------------------------*/
-.portfolio-details {
-  padding-top: 40px;
-}
-
-.portfolio-details .portfolio-details-slider img {
-  width: 100%;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
-  opacity: 1;
-  border: 1px solid #2487ce;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #2487ce;
-}
-
-.portfolio-details .portfolio-info {
-  padding: 30px;
-  box-shadow: 0px 0 30px rgba(18, 66, 101, 0.08);
-}
-
-.portfolio-details .portfolio-info h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
-}
-
-.portfolio-details .portfolio-info ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-
-.portfolio-details .portfolio-info ul li+li {
-  margin-top: 10px;
-}
-
-.portfolio-details .portfolio-description {
-  padding-top: 30px;
-}
-
-.portfolio-details .portfolio-description h2 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.portfolio-details .portfolio-description p {
-  padding: 0;
-}
-
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
+.team {
+  background: #ECF6E1;
+}
+
 .team .member {
   margin-bottom: 20px;
   overflow: hidden;
@@ -1346,118 +1210,6 @@ section {
 .team .member:hover .social {
   opacity: 1;
 }
-
-/*--------------------------------------------------------------
-# Pricing
---------------------------------------------------------------*/
-.pricing .box {
-  padding: 40px 20px;
-  text-align: center;
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-  background: #fefefe;
-  box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.1);
-}
-
-.pricing .box h3 {
-  font-weight: 400;
-  padding: 15px;
-  font-size: 18px;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: #124265;
-}
-
-.pricing .box h4 {
-  font-size: 42px;
-  color: #2487ce;
-  font-weight: 500;
-  font-family: "Open Sans", sans-serif;
-  margin-bottom: 20px;
-}
-
-.pricing .box h4 sup {
-  font-size: 20px;
-  top: -15px;
-  left: -3px;
-}
-
-.pricing .box h4 span {
-  color: #bababa;
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.pricing .box ul {
-  padding: 0;
-  list-style: none;
-  color: #124265;
-  text-align: center;
-  line-height: 20px;
-  font-size: 14px;
-}
-
-.pricing .box ul li {
-  padding-bottom: 16px;
-}
-
-.pricing .box ul .na {
-  color: #ccc;
-  text-decoration: line-through;
-}
-
-.pricing .box .btn-wrap {
-  padding: 15px;
-  text-align: center;
-}
-
-.pricing .box .btn-buy {
-  display: inline-block;
-  padding: 10px 40px;
-  border-radius: 4px;
-  color: #2487ce;
-  transition: none;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  transition: 0.3s;
-  border: 2px solid #2487ce;
-}
-
-.pricing .box .btn-buy:hover {
-  background: #2487ce;
-  color: #fff;
-}
-
-.pricing .featured {
-  background: #2487ce;
-}
-
-.pricing .featured h3,
-.pricing .featured h4,
-.pricing .featured h4 span,
-.pricing .featured ul,
-.pricing .featured ul .na {
-  color: #fff;
-}
-
-.pricing .featured .btn-wrap {
-  padding: 15px;
-  text-align: center;
-}
-
-.pricing .featured .btn-buy {
-  color: #fff;
-  border: 2px solid #fff;
-}
-
-.pricing .featured .btn-buy:hover {
-  background: #fff;
-  color: #2487ce;
-}
-
 /*--------------------------------------------------------------
 # Frequently Asked Questions
 --------------------------------------------------------------*/
@@ -1543,6 +1295,10 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.contact {
+  background: #ECF6E1;
+}
+
 .contact .info {
   width: 100%;
   background: #fff;
@@ -1742,15 +1498,15 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  color: #444444;
+  color: #ffffff;
   font-size: 14px;
-  background: #f8fbfe;
+  background: #1D6F5A;
   box-shadow: 0px 2px 15px rgba(18, 66, 101, 0.08);
 }
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
-  background: #fff;
+  background: #1D6F5A;
 }
 
 #footer .footer-top .footer-contact {
@@ -1770,7 +1526,7 @@ section {
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Raleway", sans-serif;
-  color: #777777;
+  color: #ffffff;
 }
 
 #footer .footer-top h4 {
@@ -1809,7 +1565,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #777777;
+  color: #ffffff;
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
@@ -1827,7 +1583,7 @@ section {
 #footer .footer-newsletter h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #444444;
+  color: #ffffff;
   position: relative;
   padding-bottom: 12px;
 }
@@ -1871,7 +1627,7 @@ section {
 #footer .credits {
   padding-top: 5px;
   font-size: 13px;
-  color: #444444;
+  color: #ffffff;
 }
 
 #footer .social-links a {
