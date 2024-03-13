@@ -3,22 +3,17 @@ from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.models import User, auth
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages as django_messages
-from .models import Feature, QuizQuestion, ThreadManager, Thread
-from myapp.models import Thread
+from .models import Feature, QuizQuestion
 from django.core.serializers import serialize
+from django.utils.translation import gettext as _
 
 # Create your views here.
 def index(request):
 	features = Feature.objects.all()
 	return render(request, 'index.html', {'features' : features})
 
-@login_required
-def messages(request):
-    threads = Thread.objects.by_user(user=request.user).prefetch_related('chatmessage_thread').order_by('timestamp')
-    context = {
-        'Threads': threads,
-    }
-    return render(request, 'messages.html', context)
+def dictionaryEL(request):
+	return render(request, 'themes/dictionaryEnglish.html')
 
 def quiz(request):
     questions = QuizQuestion.objects.all()
